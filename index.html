@@ -11,25 +11,23 @@
 }
 
 body {
+  margin: 0;
   font-family: tahoma, verdana, arial;
 }
 
-#output {
+.output {
   width: 100%;
   height: 400px;
   font-size: 1em;
-  border: 1px solid #333;
-  border-radius: 8px;
-  box-shadow: inset 0px 0px 32px rgba(255, 255, 255, .6);
   background: black;
-  color: #F82;
+  color: #FFF;
   font-family: monospace;
   overflow: auto;
 }
 
 .console-line {
   margin-bottom: 1em;
-  line-height: 1.4;
+  line-height: 1;
   padding: 1em;
 }
 
@@ -49,30 +47,72 @@ body {
   background: rgba(128, 128, 128, .3);
 }
 
-#input {
+.input {
   width: 100%;
   font-size: 2em;
-  border: 1px solid #CCC;
-  border-radius: 4px;
-  box-shadow: inset 4px 4px 16px rgba(0, 0, 0, .1);
-  padding: 4px;
+  border: 0;
+  background-color: black;
+  color: #FFF;
+}
+
+.input:focus {
+    outline:none;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 
   </style>
 </head>
 <body>
-  <h1>Grue: Interactive Fiction for JavaScript</h1>
-  <p>
-  <p>This space intentionally left blank.
-  <div id="output">
+    <div class="output" id="output">
+    </div>
+    <input class="input" id="input" placeholder='enter a command'>
 
-  </div>
-  <input id="input" placeholder='enter command here (look, open, take, go, etc.)'>
-  <p class=trackback>Check out the source for Grue <a href="https://github.com/thomaswilburn/Grue">here</a>.
-  <script src="almond.js"></script>
-  <script src="World.js"></script>
-  <script src="BaseRules.js"></script>
-  <script src="test.js"></script>
+    <div id="shipos" class="modal">
+
+    <div class="modal-content">
+        <div class="output" id="shipoutput">
+        </div>
+        <input class="input" id="shipinput" placeholder='enter a command'>
+    </div>
+
+</div>
+<script src="bundle.js"></script>
 </body>
 </html>

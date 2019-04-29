@@ -1,0 +1,18 @@
+module.exports = {
+    printWidth: 100,
+    tabWidth: 4,
+    useTabs: false,
+    semi: true,
+    singleQuote: true,
+    trailingComma: 'es5',
+    bracketSpacing: false,
+    jsxBracketSameLine: false,
+    arrowParens: 'avoid',
+    rangeStart: 0,
+    rangeEnd: Infinity,
+    parser: 'babylon',
+    // filepath: None,
+    requirePragma: false,
+    insertPragma: false,
+    proseWrap: 'preserve',
+};
